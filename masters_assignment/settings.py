@@ -13,7 +13,16 @@ SECRET_KEY = 'y-b6y^=)ac_j!1%_!3f+1288od09+^)&#zu8diuc=ihx0gqcqm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "localhost:3000",
+    "0.0.0.0",
+    "127.0.0.1",
+    "192.168.43.181",
+    "192.168.43.181:3000"
+    "127.0.0.1:3000",
+    "127.0.0.1:8000",
+]
 
 
 # Application definition
@@ -108,3 +117,33 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://localhost',
+    'http://127.0.0.1',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+)
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+
+CORS_ALLOW_HEADERS = (
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+)
